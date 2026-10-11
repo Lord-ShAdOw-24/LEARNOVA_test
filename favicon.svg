@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Learnova">
+  <rect width="32" height="32" rx="7" fill="#0B1F44"/>
+  <path fill="#C9A227" d="M16 3.2 28 9.6 16 13.4 4 9.6Z"/>
+  <circle cx="16" cy="20.2" r="8.2" fill="#F7F2E7"/>
+  <circle cx="13.1" cy="19.3" r="2.15" fill="#0E1A2E"/>
+  <circle cx="18.9" cy="19.3" r="2.15" fill="#0E1A2E"/>
+  <path fill="#C9A227" d="M16 20.8 14.15 24.6 17.85 24.6Z"/>
+</svg>

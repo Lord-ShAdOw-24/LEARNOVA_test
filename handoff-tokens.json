@@ -1,0 +1,42 @@
+{
+  "name": "Learnova",
+  "tagline": "Learn. Grow. Succeed.",
+  "colors": {
+    "navy": "#0B1F44",
+    "navyMid": "#16305F",
+    "navyDeep": "#071226",
+    "gold": "#C9A227",
+    "goldSoft": "#E8D48A",
+    "cream": "#F6F1E4",
+    "paper": "#FFFDF8",
+    "ink": "#121A2A",
+    "slate": "#5C6578",
+    "ok": "#2F6B4F",
+    "warn": "#9A4B1A",
+    "danger": "#9B2C2C"
+  },
+  "fonts": {
+    "display": "Fraunces",
+    "sans": "Figtree"
+  },
+  "radius": { "sm": 8, "md": 14, "lg": 22, "xl": 30 },
+  "flames": [
+    { "tier": 1, "days": 7, "label": "Spark", "file": "badges/flame-sm.png" },
+    { "tier": 2, "days": 21, "label": "Flame", "file": "badges/flame-md.png" },
+    { "tier": 3, "days": 45, "label": "Inferno", "file": "badges/flame-lg.png" }
+  ],
+  "shieldLevels": [0, 50, 150, 400, 1000, 2500],
+  "moderation": ["ok", "scan", "frozen", "banned"],
+  "explorer": {
+    "gates": ["GCE", "Competitive Entrance Examinations (Concours)"],
+    "concoursStatus": "pending",
+    "gce": {
+      "questions": "GCE Past Questions",
+      "answers": "Answers to Past Questions",
+      "separatePdfs": true
+    },
+    "concours": {
+      "combinedPdf": "Entrance Exam (Concours) Past Questions and Answers"
+    }
+  }
+}
