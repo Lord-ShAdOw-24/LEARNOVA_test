@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+
+  --color-navy: #0b1f44;
+  --color-navy-mid: #16305f;
+  --color-navy-deep: #071226;
+  --color-gold: #c9a227;
+  --color-gold-soft: #e8d48a;
+  --color-cream: #f6f1e4;
+  --color-paper: #fffdf8;
+  --color-ink: #121a2a;
+  --color-slate: #5c6578;
+  --color-line: #d9d1c0;
+  --color-ok: #2f6b4f;
+  --color-warn: #9a4b1a;
+  --color-danger: #9b2c2c;
+
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+}
+
+:root {
+  --bg: #f6f1e4;
+  --fg: #121a2a;
+  --card: #fffdf8;
+  --muted: #5c6578;
+  --border: color-mix(in oklab, #0b1f44 14%, transparent);
+  --accent: #c9a227;
+  --accent-fg: #0b1f44;
+  --shadow: 0 12px 40px color-mix(in oklab, #0b1f44 10%, transparent);
+  --tabbar: color-mix(in oklab, #fffdf8 88%, transparent);
+}
+
+.dark {
+  --bg: #071226;
+  --fg: #f4efe2;
+  --card: #12233f;
+  --muted: #b7b3a6;
+  --border: color-mix(in oklab, #f4efe2 14%, transparent);
+  --accent: #e0c36a;
+  --accent-fg: #071226;
+  --shadow: 0 16px 40px rgb(0 0 0 / 0.35);
+  --tabbar: color-mix(in oklab, #12233f 86%, transparent);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+    font-weight: 560;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-gold) 40%, transparent);
+  }
+}
+
+.phone-stage {
+  min-height: 100dvh;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, color-mix(in oklab, var(--color-gold) 18%, transparent), transparent 55%),
+    var(--color-navy-deep);
+}
+
+.phone-frame {
+  min-height: 100dvh;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--bg);
+  color: var(--fg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media (min-width: 640px) {
+  .phone-frame {
+    max-width: 430px;
+    box-shadow: 0 30px 80px rgb(0 0 0 / 0.35);
+    border-left: 1px solid color-mix(in oklab, white 10%, transparent);
+    border-right: 1px solid color-mix(in oklab, white 10%, transparent);
+  }
+}
+
+.glass {
+  background: color-mix(in oklab, var(--card) 82%, transparent);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.nova-bob {
+  animation: nova-bob 3.6s var(--ease, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+
+@keyframes nova-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.tabbar {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  transform: none;
+  width: auto;
+  background: var(--tabbar);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  z-index: 40;
+}
+
+.watermark {
+  pointer-events: none;
+  user-select: none;
+  background-image: repeating-linear-gradient(
+    -18deg,
+    transparent 0 42px,
+    color-mix(in oklab, var(--fg) 5%, transparent) 42px 43px
+  );
+}
+
+html[data-season="christmas"] .season-bar {
+  background: linear-gradient(90deg, #7f1d1d, #0b1f44 55%, #16532d);
+  color: #f6f1e4;
+}
+html[data-season="youth"] .season-bar {
+  background: #0b1f44;
+  color: #e8d48a;
+}
+html[data-season="independence"] .season-bar {
+  background: linear-gradient(90deg, #15803d, #f4e7c5, #dc2626);
+  color: #121a2a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nova-bob {
+    animation: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+.protected-doc {
+  user-select: none;
+  -webkit-user-select: none;
+}
